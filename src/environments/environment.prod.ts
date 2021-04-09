@@ -1,12 +1,12 @@
 export const environment = {
   production: true,
   firebase: {
-    apiKey: "AIzaSyBcFPoH9jsj0X15ISCrDLW3VqL5kO5CNkE",
-    authDomain: "appcademia-oscarlmunoz.firebaseapp.com",
-    projectId: "appcademia-oscarlmunoz",
-    storageBucket: "appcademia-oscarlmunoz.appspot.com",
-    messagingSenderId: "651773093953",
-    appId: "1:651773093953:web:02440c02b516c917c1fec0",
-    measurementId: "G-KNH0ESPBT0"
+    apiKey: "AIzaSyB4VidaWT15CL1olo1Jn-0X4Y8UE0PxmYo",
+    authDomain: "angular-auth-firebase-aa493.firebaseapp.com",
+    databaseURL: "https://angular-auth-firebase-aa493.firebaseio.com",
+    projectId: "angular-auth-firebase-aa493",
+    storageBucket: "angular-auth-firebase-aa493.appspot.com",
+    messagingSenderId: "316381273022",
+    appId: "1:316381273022:web:f3bc6964f520e4e1f037ef"
   }
 };
