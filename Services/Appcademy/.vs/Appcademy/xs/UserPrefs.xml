@@ -1,0 +1,30 @@
+﻿<Properties StartupConfiguration="{8E9C6E62-75D4-4070-A83F-FAB32910B59C}|Default">
+  <MonoDevelop.Ide.ItemProperties.Appcademy PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Appcademy/Startup.cs">
+    <Files>
+      <File FileName="Appcademy/Entities/User.cs" Line="11" Column="4" />
+      <File FileName="Appcademy/Controllers/UserController.cs" />
+      <File FileName="Appcademy/Context/ApplicationDbContext.cs" />
+      <File FileName="Appcademy/Startup.cs" Line="31" Column="40" />
+      <File FileName="Appcademy/appsettings.json" />
+      <File FileName="Appcademy/Properties/launchSettings.json" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Appcademy" expanded="True">
+            <Node name="Appcademy" expanded="True">
+              <Node name="Startup.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
