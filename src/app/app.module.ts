@@ -9,11 +9,18 @@ import { AppComponent } from './app.component';
 import { AngularFireModule } from '@angular/fire';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MainComponent } from './components/public/main/main.component';
+import { HeaderComponent } from './components/shared/header/header.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialCdkModule } from './material-cdk/material-cdk.module';
+import { CardComponent } from './components/shared/card/card.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainComponent
+    MainComponent,
+    HeaderComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +29,9 @@ import { MainComponent } from './components/public/main/main.component';
     AngularFireModule,
     NgbModule,
     AuthenticationModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MaterialCdkModule
   ],
   bootstrap: [AppComponent]
 })

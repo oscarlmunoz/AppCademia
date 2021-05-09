@@ -15,7 +15,13 @@ export class LoginComponent {
   login() {
     const user = {email: this.email, password: this.password};
     this.UsersService.login(user).subscribe( data => {
-      console.log(data);
+      if (data.status == "ok") 
+      {
+        console.log(data);
+      }
     })
   }
+
+
+  
 }

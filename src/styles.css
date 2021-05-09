@@ -1,5 +1,6 @@
 @import 'https://use.fontawesome.com/releases/v5.5.0/css/all.css';
 
+En nuestro archivo styles.scss incluiremos los estilos del tema que acabamos de incluir
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -15,3 +16,5 @@ body {
   height: 100%;
   font-family: 'Poppins', sans-serif;
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
