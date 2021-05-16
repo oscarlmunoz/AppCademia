@@ -10,11 +10,11 @@ export class LoginComponent {
   email: string;
   password: string;
 
-  constructor(public UsersService: UsersService) {}
+  constructor(public usersService: UsersService) {}
 
   login() {
     const user = {email: this.email, password: this.password};
-    this.UsersService.login(user).subscribe( data => {
+    this.usersService.login(user).subscribe( data => {
       if (data.status == "ok") 
       {
         console.log(data);

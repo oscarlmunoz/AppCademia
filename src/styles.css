@@ -18,3 +18,16 @@ body {
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.overflow-ellipsis {
+  width: 230px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.flex-center-items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

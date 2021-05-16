@@ -43,3 +43,4 @@
 /Users/oscarluismunozmartinez/Projects/AppCademia/Services/Appcademy/Appcademy/obj/Debug/netcoreapp3.1/Appcademy.dll
 /Users/oscarluismunozmartinez/Projects/AppCademia/Services/Appcademy/Appcademy/obj/Debug/netcoreapp3.1/Appcademy.pdb
 /Users/oscarluismunozmartinez/Projects/AppCademia/Services/Appcademy/Appcademy/obj/Debug/netcoreapp3.1/Appcademy.genruntimeconfig.cache
+/Users/oscarluismunozmartinez/Projects/AppCademia/Services/Appcademy/Appcademy/obj/Debug/netcoreapp3.1/Appcademy.csprojAssemblyReference.cache

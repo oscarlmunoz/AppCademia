@@ -1,4 +1,16 @@
-<p>main works!</p>
-<app-card [card]="card"></app-card>
-<!-- <app-login></app-login> -->
-<!-- <app-register></app-register> -->
+<div class="container container-padding-top">
+    <h1>Bienvenido a AppCademy</h1>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+        Debitis reiciendis voluptas quasi magni fugit maxime ipsum. Nihil expedita consequuntur eveniet recusandae. 
+        Obcaecati, in repellat? Cumque excepturi dolorem eum accusamus laudantium.</p>
+    <div>
+        <app-card *ngFor="let card of cards" 
+            [ngStyle]="{'display': 'inline-block'}" 
+            [card]="card"
+            [ngClass]="'card-padding'"
+            (detailEvent)="detailEvent($event)"
+        ></app-card>
+    </div>
+    <!-- <app-login></app-login> -->
+    <!-- <app-register></app-register> -->
+</div>

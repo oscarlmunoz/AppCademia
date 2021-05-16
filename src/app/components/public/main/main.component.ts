@@ -1,5 +1,7 @@
+import { CoursesService } from './../../../services/courses/courses.service';
 import { Component, OnInit } from '@angular/core';
-import { Card } from 'src/app/models/card.model';
+import { Course } from 'src/app/models/course.model';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -9,20 +11,36 @@ import { Card } from 'src/app/models/card.model';
 })
 export class MainComponent implements OnInit {
 
-  card: Card = new Card();
-  
-  constructor() { 
+  cards: Array<Course> = new Array<Course>();
+  constructor(
+    public courseService: CoursesService,
+    private router: Router
+    ) { 
   }
 
   ngOnInit(): void {
-    this.card = {
-      title: "Titulo",
-      altMainImage: "Imagen de shiba inu",
-      mainImage: "https://material.angular.io/assets/img/examples/shiba2.jpg",
-      description: "Descripción del curso",
-      subtitle: "Subtitulo"
-    };
-    
+
+    this.courseService.getCourses().subscribe( data => {
+      data.forEach(element => {
+        let card: Course = new Course();
+        card = {
+          id: element.id,
+          code: element.code,
+          title: element.title,
+          altMainImage: "Imagen de " + element.title,
+          mainImage: element.image,
+          description: element.description,
+          subtitle: element.subtitle
+        }; 
+        this.cards.push(card)
+      });
+    }
+  )
+  }
+
+  detailEvent(code: string) {
+    console.log("CODE from main: " + code);
+    this.router.navigateByUrl(code);
   }
 
 }

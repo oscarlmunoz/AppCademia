@@ -13,6 +13,9 @@ import { HeaderComponent } from './components/shared/header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialCdkModule } from './material-cdk/material-cdk.module';
 import { CardComponent } from './components/shared/card/card.component';
+import { AboutComponent } from './components/public/about/about.component';
+import { CourseDetailComponent } from './components/public/course-detail/course-detail.component';
+import { PageNotFoundComponent } from './components/public/page-not-found/page-not-found.component';
 
 
 @NgModule({
@@ -20,7 +23,10 @@ import { CardComponent } from './components/shared/card/card.component';
     AppComponent,
     MainComponent,
     HeaderComponent,
-    CardComponent
+    CardComponent,
+    AboutComponent,
+    CourseDetailComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Card } from 'src/app/models/card.model';
+import { EventEmitter } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
+import { Course } from 'src/app/models/course.model';
 
 
 @Component({
@@ -9,11 +10,16 @@ import { Card } from 'src/app/models/card.model';
 })
 export class CardComponent implements OnInit {
   
-  @Input() card: Card;
-
+  @Input() card: Course;
+  @Output() detailEvent = new EventEmitter<string>();
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  showDetail(value: string) {
+    console.log("CODE from card: " + value);
+    this.detailEvent.emit(value);
   }
 
 }
