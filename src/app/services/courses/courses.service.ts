@@ -14,8 +14,11 @@ export class CoursesService {
   }
 
   getCourseByCode(code: string): Observable<any> {
-    console.log("CODE in service: " + code);
     return this.http.get(`https://localhost:5001/api/course/${code}`);
+  }
+
+  getCourseContent(fileName: string): Observable<any> {
+    return this.http.get(`https://localhost:5001/api/course/fileInfo/${fileName}`);
   }
 
 }

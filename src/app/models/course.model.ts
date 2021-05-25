@@ -8,4 +8,6 @@ export class Course {
     title: string;
     subtitle: string;
     description: string;
+    syllabus: string;
 }
+

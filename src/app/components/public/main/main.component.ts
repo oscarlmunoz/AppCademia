@@ -30,7 +30,8 @@ export class MainComponent implements OnInit {
           altMainImage: "Imagen de " + element.title,
           mainImage: element.image,
           description: element.description,
-          subtitle: element.subtitle
+          subtitle: element.subtitle,
+          syllabus: element.syllabus
         }; 
         this.cards.push(card)
       });
@@ -39,7 +40,6 @@ export class MainComponent implements OnInit {
   }
 
   detailEvent(code: string) {
-    console.log("CODE from main: " + code);
     this.router.navigateByUrl(code);
   }
 

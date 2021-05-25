@@ -18,7 +18,6 @@ export class CardComponent implements OnInit {
   }
 
   showDetail(value: string) {
-    console.log("CODE from card: " + value);
     this.detailEvent.emit(value);
   }
 

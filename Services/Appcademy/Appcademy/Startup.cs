@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Appcademy.Context;
+using Appcademy.Interfaces;
+using Appcademy.Lib;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -28,6 +30,8 @@ namespace Appcademy
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+          services.AddSingleton<IFileLib, FileLib>();
+
           services.AddDbContext<ApplicationDbContext>(
             options => options.UseMySql(Configuration.GetConnectionString("DefaultConnection"))
           );
@@ -52,7 +56,8 @@ namespace Appcademy
               options.AllowAnyOrigin()
              .AllowAnyMethod()
              .AllowAnyHeader();
-            });
+            });          
+
       });
 
     }

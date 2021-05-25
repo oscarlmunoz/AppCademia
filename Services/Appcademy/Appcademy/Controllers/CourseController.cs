@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Appcademy.Context;
 using Appcademy.Entities;
+using Appcademy.Interfaces;
+using Appcademy.Lib;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -15,11 +17,14 @@ namespace Appcademy.Controllers
   {
     #region context injection
     private readonly ApplicationDbContext context;
+    private readonly IFileLib _fileLib;
 
-    public CourseController(ApplicationDbContext context)
+    public CourseController(ApplicationDbContext context, IFileLib fileLib)
     {
       this.context = context;
+      this._fileLib = fileLib;
     }
+
     #endregion
 
     #region methods
@@ -44,13 +49,21 @@ namespace Appcademy.Controllers
       return course;
     }
 
+    [HttpGet("fileInfo/{fileName}", Name = "LeerArchivo")]
+    public ActionResult<List<CourseContent>> ReadFile(string fileName)
+    {
+      List<CourseContent> courseContents = new List<CourseContent>();
+      //courseContents = new FileLib().ReadFile(fileName);
+      courseContents = _fileLib.ReadFile(fileName);
+      return courseContents;
+    }
 
     [HttpPost("register")]
     public async Task<ActionResult> Register([FromBody] Course course)
     {
       await context.Courses.AddAsync(course);
       await context.SaveChangesAsync();
-      return new CreatedAtRouteResult("ObtenerUsusario", new { id = course.Id }, course);
+      return new CreatedAtRouteResult("ObtenerCursoByCode", new { id = course.Id }, course);
     }
 
     [HttpPut("{id}")]

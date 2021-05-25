@@ -13,7 +13,6 @@ export class CourseResolver implements Resolve<Course>{
 
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Course> {
         const code = route.paramMap.get("course-detail");
-        console.log("CODE in resolver: " + code);
         return this.service.getCourseByCode(code);
     }
 }
