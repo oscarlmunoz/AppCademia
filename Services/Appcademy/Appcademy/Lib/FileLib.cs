@@ -8,7 +8,7 @@ namespace Appcademy.Lib
   public class FileLib : IFileLib
   {
 
-    public List<CourseContent> ReadFile(string fileName)
+    public List<CourseContent> ReadCourseContent(string fileName)
     {
       List<CourseContent> syllabus = new List<CourseContent>();
       string filePath = "CourseContent/";

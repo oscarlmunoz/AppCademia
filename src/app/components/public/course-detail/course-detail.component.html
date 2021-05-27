@@ -1,9 +1,9 @@
 <div class="container py-4">
     <div class="bg-light mb-4 p-5 rounded-3">
         <div class="container-fluid py-5 row">
-            <div class="col-md-6">
+            <!-- <div class="col-md-6">
                 <img class=""  src={{course.mainImage}} alt={{course.altMainImage}}>
-            </div>
+            </div> -->
             <div class="col-md-6">
                 <h1 class="display-5 fw-bold">{{course.title}}</h1>
                 <h2 class="display-5 fw-bold">{{course.subtitle}}</h2>
@@ -11,10 +11,29 @@
             </div>
         </div>
         <div class="container-fluid py-5 row">
-            <div *ngFor="let subject of syllabus"  class="col-md-12">
-                <h1 class="display-5 fw-bold">{{subject?.id}}.- {{subject?.name}}</h1>
-                <!-- <h2 class="display-5 fw-bold" [innerHTML] = "subject?.text"></h2> -->
-            </div>
+            <ng-container *ngIf="showSyllabus">
+                <div *ngFor="let subject of syllabus" (click)="showSubject(subject)" class="col-md-12">
+                    <h1 class="display-5 fw-bold inline cursor-pointer">{{subject?.id}}.- {{subject?.name}}</h1>
+                </div>
+            </ng-container>
+            <ng-container *ngIf="!showSyllabus">
+                <div class="col-md-12">
+                    <h3 (click)="hideSubject()" class="display-5 fw-bold inline cursor-pointer">Volver</h3>
+                    <h1 class="display-5 fw-bold cursor-pointer">{{showingSubject?.id}}.- {{showingSubject?.name}}</h1>
+                    <img class="card-image-size card-center-item card-image-bottom-padding"  src={{showingSubject?.image}}>
+                    <p [innerHTML] = "showingSubject?.text"></p>
+                    <div>
+                        <h2>{{video?.snippet?.localized?.title}}</h2>
+                        <iframe width="560" height="315" 
+                            [src]="getVideoIframe(video?.id) | safe" 
+                            title="video?.snippet?.localized?.title" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            </ng-container>
         </div>
     </div>
 </div>

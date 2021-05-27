@@ -54,7 +54,7 @@ namespace Appcademy.Controllers
     {
       List<CourseContent> courseContents = new List<CourseContent>();
       //courseContents = new FileLib().ReadFile(fileName);
-      courseContents = _fileLib.ReadFile(fileName);
+      courseContents = _fileLib.ReadCourseContent(fileName);
       return courseContents;
     }
 

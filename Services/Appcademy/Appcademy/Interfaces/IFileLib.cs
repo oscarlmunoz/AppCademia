@@ -6,6 +6,6 @@ namespace Appcademy.Interfaces
 {
   public interface IFileLib
   {
-    List<CourseContent> ReadFile(string fileName);
+    List<CourseContent> ReadCourseContent(string fileName);
   }
 }

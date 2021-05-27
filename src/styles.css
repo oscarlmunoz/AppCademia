@@ -31,3 +31,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   align-items: center;
   justify-content: center;
 }
+
+.inline {
+  display: inline;
+}
+
+.cursor-pointer{
+  cursor: pointer;
+}
