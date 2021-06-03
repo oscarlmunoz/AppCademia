@@ -5,6 +5,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Course } from 'src/app/models/course.model';
 import { takeUntil } from 'rxjs/operators';
+import { Observable } from 'rxjs/internal/Observable';
 
 @Component({
   selector: 'app-course-detail',
@@ -14,8 +15,8 @@ import { takeUntil } from 'rxjs/operators';
 export class CourseDetailComponent implements OnInit {
 
   course: Course;
-  syllabus: CourseContent[] = [];
-  showSyllabus: boolean = true;
+  syllabus$: Observable<CourseContent[]>;
+  showSyllabus: boolean = true; // will be used/modified when securing the app
   showingSubject: CourseContent;
   player: any;
   video: any;
@@ -40,24 +41,9 @@ export class CourseDetailComponent implements OnInit {
           subtitle: element.subtitle,
           syllabus: element.syllabus
         }; 
-
-        this.courseService.getCourseContent(this.course.syllabus).subscribe(
-          data => {
-            data.forEach(element => {
-              let subject: CourseContent = new CourseContent();
-              subject = {
-                id: element.id,
-                image: element.image,
-                name: element.name,
-                text: element.text,
-                video: element.video
-              };
-              this.syllabus.push(subject);
-            });
-          }
-        )
-
-        console.log(this.syllabus);
+        if (this.showSyllabus) {
+          this.syllabus$ = this.courseService.getCourseContent(this.course.syllabus);
+        }
   }
 
   showSubject(subject: CourseContent) {

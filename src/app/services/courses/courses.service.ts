@@ -1,3 +1,4 @@
+import { CourseContent } from './../../models/course-content.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -17,8 +18,8 @@ export class CoursesService {
     return this.http.get(`https://localhost:5001/api/course/${code}`);
   }
 
-  getCourseContent(fileName: string): Observable<any> {
-    return this.http.get(`https://localhost:5001/api/course/fileInfo/${fileName}`);
+  getCourseContent(fileName: string): Observable<Array<CourseContent>> {
+    return this.http.get<Array<CourseContent>>(`https://localhost:5001/api/course/fileInfo/${fileName}`);
   }
 
 }
