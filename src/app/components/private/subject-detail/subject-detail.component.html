@@ -1,24 +1,13 @@
 <div class="container py-4">
-    <div class="bg-light mb-4 p-5 rounded-3">
+    <!-- <div class="bg-light mb-4 p-5 rounded-3">
         <div class="container-fluid py-5 row">
-            <!-- <div class="col-md-6">
-                <img class=""  src={{course.mainImage}} alt={{course.altMainImage}}>
-            </div> -->
             <div class="col-md-6">
                 <h1 class="display-5 fw-bold">{{course.title}}</h1>
-                <h2 class="display-5 fw-bold">{{course.subtitle}}</h2>
+                <h2 class="display-5 fw-bold">{{subject.name}}</h2>
                 <p class="col-md-8 fs-4">{{course.description}}</p>
             </div>
         </div>
         <div class="container-fluid py-5 row">
-            <ng-container *ngIf="showSyllabus">
-                <ng-container *ngIf="syllabus$ | async as syllabus">
-                    <div *ngFor="let subject of syllabus" (click)="showSubject(subject)" class="col-md-12">
-                        <h1 class="display-5 fw-bold inline cursor-pointer">{{subject?.id}}.- {{subject?.name}}</h1>
-                    </div>
-                    <h1 *ngIf="!syllabus?.length" class="display-5 fw-bold inline">No disponible por el momento</h1>
-                </ng-container>
-            </ng-container>
             <ng-container *ngIf="!showSyllabus">
                 <div class="col-md-12">
                     <h3 (click)="hideSubject()" class="display-5 fw-bold inline cursor-pointer">Volver</h3>
@@ -38,5 +27,6 @@
                 </div>
             </ng-container>
         </div>
-    </div>
+    </div> -->
+    SUBJECT!!!
 </div>

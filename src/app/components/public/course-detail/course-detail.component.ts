@@ -1,8 +1,8 @@
+import { CourseContent } from 'src/app/models/course-content.model';
 import { YoutubeService } from './../../../services/media/youtube.service';
-import { CourseContent } from './../../../models/course-content.model';
 import { CoursesService } from './../../../services/courses/courses.service';
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Course } from 'src/app/models/course.model';
 import { takeUntil } from 'rxjs/operators';
 import { Observable } from 'rxjs/internal/Observable';
@@ -24,7 +24,8 @@ export class CourseDetailComponent implements OnInit {
   constructor(
     private route:ActivatedRoute,
     public courseService: CoursesService,
-    public youtubeService: YoutubeService
+    public youtubeService: YoutubeService,
+    private router: Router
     ) { }
 
   ngOnInit(): void {
@@ -46,16 +47,20 @@ export class CourseDetailComponent implements OnInit {
         }
   }
 
+  // showSubject(subject: Subject) {
+  //   this.showSyllabus = false;
+  //   this.showingSubject = subject;
+  //   this.youtubeService
+  //     .getVideo(subject.video)
+  //     .subscribe(video => {
+  //       if (video != null && video.items.length > 0) {
+  //         this.video = video.items[0]
+  //       }
+  //     });
+  // }
+
   showSubject(subject: CourseContent) {
-    this.showSyllabus = false;
-    this.showingSubject = subject;
-    this.youtubeService
-      .getVideo(subject.video)
-      .subscribe(video => {
-        if (video != null && video.items.length > 0) {
-          this.video = video.items[0]
-        }
-      });
+    this.router.navigateByUrl("/subject/" + subject.name);
   }
 
   hideSubject() {

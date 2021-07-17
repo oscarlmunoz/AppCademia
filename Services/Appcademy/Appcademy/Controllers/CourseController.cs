@@ -1,11 +1,9 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Appcademy.Context;
 using Appcademy.Entities;
 using Appcademy.Interfaces;
-using Appcademy.Lib;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -17,12 +15,12 @@ namespace Appcademy.Controllers
   {
     #region context injection
     private readonly ApplicationDbContext context;
-    private readonly IFileLib _fileLib;
+    private readonly ICourseLib _courseLib;
 
-    public CourseController(ApplicationDbContext context, IFileLib fileLib)
+    public CourseController(ApplicationDbContext context, ICourseLib courseLib)
     {
       this.context = context;
-      this._fileLib = fileLib;
+      this._courseLib = courseLib;
     }
 
     #endregion
@@ -49,14 +47,23 @@ namespace Appcademy.Controllers
       return course;
     }
 
-    [HttpGet("fileInfo/{fileName}", Name = "LeerArchivo")]
+    [HttpGet("courseContent/{fileName}", Name = "ReadCourseContent")]
     public ActionResult<List<CourseContent>> ReadFile(string fileName)
     {
       List<CourseContent> courseContents = new List<CourseContent>();
-      //courseContents = new FileLib().ReadFile(fileName);
-      courseContents = _fileLib.ReadCourseContent(fileName);
+      courseContents = _courseLib.GetCourseContent(fileName);
       return courseContents;
     }
+
+    //TODO crear servicio para obtener el contenido de un tema
+    //[HttpGet("subjectContent/{fileName}", Name = "LeerContenidoTema")]
+    //public ActionResult<List<CourseContent>> ReadFile(string fileName)
+    //{
+    //  List<CourseContent> courseContents = new List<CourseContent>();
+    //  //courseContents = new FileLib().ReadFile(fileName);
+    //  courseContents = _fileLib.ReadFileContent(fileName, "");
+    //  return courseContents;
+    //}
 
     [HttpPost("register")]
     public async Task<ActionResult> Register([FromBody] Course course)

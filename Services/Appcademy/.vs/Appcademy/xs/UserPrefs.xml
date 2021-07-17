@@ -1,21 +1,33 @@
 ﻿<Properties StartupConfiguration="{8E9C6E62-75D4-4070-A83F-FAB32910B59C}|Default">
   <MonoDevelop.Ide.ItemProperties.Appcademy PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Appcademy/CourseContent/TemarioBBDD.csv">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Appcademy/Entities/Response.cs">
     <Files>
-      <File FileName="Appcademy/Controllers/CourseController.cs" Line="57" Column="50" />
-      <File FileName="Appcademy/Lib/FileLib.cs" Line="8" Column="28" />
-      <File FileName="Appcademy/Startup.cs" Line="31" Column="38" />
-      <File FileName="Appcademy/Interfaces/IFileLib.cs" Line="9" Column="42" />
+      <File FileName="Appcademy/Controllers/CourseController.cs" Line="1" Column="12" />
+      <File FileName="Appcademy/Lib/FileLib.cs" Line="8" Column="34" />
       <File FileName="Appcademy/CourseContent/TemarioBBDD.csv" Line="1" Column="1" />
+      <File FileName="Appcademy/Classes/CourseContent.cs" Line="34" Column="23" />
+      <File FileName="Appcademy/Lib/FileLib (copia).cs" Line="21" Column="83" />
+      <File FileName="Appcademy/Interfaces/ICourseLib.cs" Line="1" Column="26" />
+      <File FileName="Appcademy/Interfaces/IFileLib.cs" Line="3" Column="24" />
+      <File FileName="Appcademy/Entities/Course.cs" Line="5" Column="16" />
+      <File FileName="Appcademy/Entities/Response.cs" Line="7" Column="26" />
+      <File FileName="Appcademy/Entities/Student.cs" Line="1" Column="23" />
+      <File FileName="Appcademy/Entities/StudentCourse.cs" Line="1" Column="1" />
+      <File FileName="Appcademy/Controllers/StudentController.cs" Line="73" Column="18" />
+      <File FileName="Appcademy/Classes/SubjectContent.cs" Line="1" Column="12" />
+      <File FileName="Appcademy/Context/ApplicationDbContext.cs" Line="20" Column="22" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Appcademy" expanded="True">
             <Node name="Appcademy" expanded="True">
+              <Node name="Classes" expanded="True" />
+              <Node name="Context" expanded="True" />
               <Node name="Controllers" expanded="True" />
-              <Node name="CourseContent" expanded="True">
-                <Node name="TemarioBBDD.csv" selected="True" />
+              <Node name="CourseContent" expanded="True" />
+              <Node name="Entities" expanded="True">
+                <Node name="Response.cs" selected="True" />
               </Node>
               <Node name="Interfaces" expanded="True" />
               <Node name="Lib" expanded="True" />

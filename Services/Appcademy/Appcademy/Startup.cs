@@ -31,8 +31,9 @@ namespace Appcademy
         public void ConfigureServices(IServiceCollection services)
         {
           services.AddSingleton<IFileLib, FileLib>();
+          services.AddSingleton<ICourseLib, CourseLib>();
 
-          services.AddDbContext<ApplicationDbContext>(
+      services.AddDbContext<ApplicationDbContext>(
             options => options.UseMySql(Configuration.GetConnectionString("DefaultConnection"))
           );
 

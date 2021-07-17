@@ -1,11 +1,10 @@
-using System;
 using System.Collections.Generic;
 using Appcademy.Entities;
 
 namespace Appcademy.Interfaces
 {
-  public interface IFileLib
+  public interface ICourseLib
   {
-    string ReadCsvFileContent(string fileName, string path);
+    public List<CourseContent> GetCourseContent(string fileName);
   }
 }

@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -32,7 +31,7 @@ namespace Appcademy.Controllers
         return await context.Students.ToListAsync();
       }
 
-      [HttpGet("{id}", Name = "ObtenerUsusario")]
+      [HttpGet("{id}", Name = "GetUser")]
       public ActionResult<List<StudentCourse>> Get(int id)
       {
 
@@ -66,12 +65,12 @@ namespace Appcademy.Controllers
         Student findUser = await context.Students.FirstOrDefaultAsync(x => x.Email == user.Email && x.Password == user.Password);
         if (findUser == null)
         {
-          res.code = 1000;
-          res.status = "ko";
+          res.Code = 1000;
+          res.Status = "ko";
           return NotFound();
         }
       findUser.Token = "MockTokenOk";
-      res.message = findUser;
+      res.Message = findUser;
         return Ok(res);
       }
 
