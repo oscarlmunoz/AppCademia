@@ -50,16 +50,10 @@ namespace Appcademy.Lib
       {
         string courseFolder = fileName.Split('_')[0];
         string path = "CourseContent/" + courseFolder + "/" + fileName + ".xml";
-        // TODO esto realmente llamará a otra función que obtenga un xml
         System.Xml.Serialization.XmlSerializer reader = new System.Xml.Serialization.XmlSerializer(typeof(SubjectContent));
         System.IO.StreamReader file = new System.IO.StreamReader(path);
         subjectContent = (SubjectContent)reader.Deserialize(file);
         file.Close();
-
-        //if (!string.IsNullOrEmpty(csvData))
-        //{
-        //  //TODO Implementar lógica para obtener datos de XML
-        //}
       }
       return subjectContent;
     }

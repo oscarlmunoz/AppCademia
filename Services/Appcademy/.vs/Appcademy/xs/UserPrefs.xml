@@ -1,12 +1,12 @@
 ﻿<Properties StartupConfiguration="{8E9C6E62-75D4-4070-A83F-FAB32910B59C}|Default">
   <MonoDevelop.Ide.ItemProperties.Appcademy PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Appcademy/Classes/SubjectContent.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Appcademy/Lib/CourseLib.cs">
     <Files>
       <File FileName="Appcademy/Controllers/CourseController.cs" Line="56" Column="6" IsPinned="True" />
       <File FileName="Appcademy/Lib/FileLib.cs" />
-      <File FileName="Appcademy/Lib/CourseLib.cs" Line="25" Column="1" />
+      <File FileName="Appcademy/Lib/CourseLib.cs" Line="53" Column="1" />
       <File FileName="Appcademy/CourseContent/BBDD/BBDD.csv" Line="3" Column="86" />
-      <File FileName="Appcademy/CourseContent/BBDD/BBDD_Introduccion.xml" Line="28" Column="17" />
+      <File FileName="Appcademy/CourseContent/BBDD/BBDD_Introduccion.xml" Line="13" Column="17" />
       <File FileName="Appcademy/Classes/SubjectContent.cs" Line="110" Column="3" />
     </Files>
     <Pads>
@@ -14,15 +14,15 @@
         <State name="__root__">
           <Node name="Appcademy" expanded="True">
             <Node name="Appcademy" expanded="True">
-              <Node name="Classes" expanded="True">
-                <Node name="SubjectContent.cs" selected="True" />
-              </Node>
+              <Node name="Classes" expanded="True" />
               <Node name="Context" expanded="True" />
               <Node name="Controllers" expanded="True" />
               <Node name="CourseContent" expanded="True">
                 <Node name="BBDD" expanded="True" />
               </Node>
-              <Node name="Lib" expanded="True" />
+              <Node name="Lib" expanded="True">
+                <Node name="CourseLib.cs" selected="True" />
+              </Node>
             </Node>
           </Node>
         </State>
@@ -32,10 +32,7 @@
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/oscarluismunozmartinez/Projects/AppCademia/Services/Appcademy/Appcademy/Lib/CourseLib.cs" relfile="Appcademy/Lib/CourseLib.cs" line="54" column="1" />
-      <Breakpoint file="/Users/oscarluismunozmartinez/Projects/AppCademia/Services/Appcademy/Appcademy/Lib/CourseLib.cs" relfile="Appcademy/Lib/CourseLib.cs" line="48" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>
