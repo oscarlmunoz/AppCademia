@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SubjectContent id="IBD_1" name="Introducción a Bases de Datos">
+
+  <Paragraphs>
+    <Paragraph id="IBDP_1" order="1">
+      Bienvenidos al primer tema del curso de Base de datos.
+    </Paragraph>
+    <Paragraph id="IBDP_2" order="2">
+      En este tema veremos una introducción a las bases de datos, explicando sus tipos y usos más comunes.
+    </Paragraph>
+    <Paragraph id="IBDP_3" order="3">
+      Recomendamos ir viendo los videos relacionados mientras se lee el tema.
+    </Paragraph>
+  </Paragraphs>
+
+  <Images>
+    <Image id="IBDI_1" path="image1.jpg" oder="1"/>
+    <Image id="IBDI_1" path="image2.png" oder="2"/>
+    <Image id="IBDI_1" path="image3.jpeg" oder="3"/>
+  </Images>
+
+  <Videos>
+    <Video id="IDBV_1" path="Ng6OsjR3pmw" order="1" type="youtube"/>
+    <Video id="IDBV_2" path="yoeV4Ex8C8U" order="2" type="youtube"/>
+    <Video id="IDBV_3" path="L4WB2Tt55hs" order="3" type="youtube"/>
+  </Videos>
+
+</SubjectContent>

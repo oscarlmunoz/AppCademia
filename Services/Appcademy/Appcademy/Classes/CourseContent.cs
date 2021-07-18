@@ -1,36 +1,16 @@
-using System.Collections.Generic;
-
+using System;
 namespace Appcademy.Entities
 {
-  public class SubjectContent
+  public class CourseContent
   {
     public int Id { get; set; }
-    public List<SubjectParagraph> Paragraphs { get; set; }
-    public List<SubjectImage> Images { get; set; }
-    public List<SubjectVideo> Videos { get; set; }
+    public string Name { get; set; }
+    public string Image { get; set; }
+    public string Text { get; set; }
+    public string Video { get; set; }
 
-    public SubjectContent()
+    public CourseContent()
     {
     }
-
-  }
-
-  public class SubjectParagraph
-  {
-    public string Id { get; set; }
-    public string Text { get; set; }
-    public int Order { get; set; }
-  }
-
-  public class SubjectImage
-  {
-    public string Id { get; set; }
-    public string Path { get; set; }
-  }
-
-  public class SubjectVideo
-  {
-    public string Id { get; set; }
-    public string Path { get; set; }
   }
 }

@@ -18,36 +18,50 @@ namespace Appcademy.Lib
     public List<CourseContent> GetCourseContent(string fileName)
     {
       List<CourseContent> syllabus = new List<CourseContent>();
-      string csvData = _fileLib.ReadCsvFileContent(fileName, "CourseContent/"); //TODO pasar a variable de contexto
-      if (!string.IsNullOrEmpty(csvData))
+      if (!String.IsNullOrEmpty(fileName))
       {
-        foreach (string row in csvData.Split('\n'))
+        string path = "CourseContent/" + fileName + "/"; //TODO pasar a variable de contexto
+        string csvData = _fileLib.ReadCsvFileContent(fileName+".csv", path); 
+        if (!string.IsNullOrEmpty(csvData))
         {
-          if (!string.IsNullOrEmpty(row))
+          foreach (string row in csvData.Split('\n'))
           {
-            syllabus.Add(new CourseContent
+            if (!string.IsNullOrEmpty(row))
             {
-              Id = Convert.ToInt32(row.Split(';')[0]),
-              Name = row.Split(';')[1],
-              Image = row.Split(';')[2],
-              Text = row.Split(';')[3],
-              Video = row.Split(';')[4]
-            });
+              syllabus.Add(new CourseContent
+              {
+                Id = Convert.ToInt32(row.Split(';')[0]),
+                Name = row.Split(';')[1],
+                Image = row.Split(';')[2],
+                Text = row.Split(';')[3],
+                Video = row.Split(';')[4]
+              });
+            }
           }
         }
       }
       return syllabus;
     }
 
-    public SubjectContent GetSubjectContent(string fileName, string path)
+    public SubjectContent GetSubjectContent(string fileName)
     {
-      SubjectContent syllabus = new SubjectContent();
-      string csvData = _fileLib.ReadCsvFileContent(fileName, path); // TODO esto realmente llamará a otra función que obtenga un xml
-      if (!string.IsNullOrEmpty(csvData))
+      SubjectContent subjectContent = new SubjectContent();
+      if (!string.IsNullOrEmpty(fileName))
       {
-        //TODO Implementar lógica para obtener datos de XML
+        string courseFolder = fileName.Split('_')[0];
+        string path = "CourseContent/" + courseFolder + "/" + fileName + ".xml";
+        // TODO esto realmente llamará a otra función que obtenga un xml
+        System.Xml.Serialization.XmlSerializer reader = new System.Xml.Serialization.XmlSerializer(typeof(SubjectContent));
+        System.IO.StreamReader file = new System.IO.StreamReader(path);
+        subjectContent = (SubjectContent)reader.Deserialize(file);
+        file.Close();
+
+        //if (!string.IsNullOrEmpty(csvData))
+        //{
+        //  //TODO Implementar lógica para obtener datos de XML
+        //}
       }
-      return syllabus;
+      return subjectContent;
     }
 
   }

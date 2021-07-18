@@ -48,7 +48,7 @@ namespace Appcademy.Controllers
     }
 
     [HttpGet("courseContent/{fileName}", Name = "ReadCourseContent")]
-    public ActionResult<List<CourseContent>> ReadFile(string fileName)
+    public ActionResult<List<CourseContent>> GetCourseContent(string fileName)
     {
       List<CourseContent> courseContents = new List<CourseContent>();
       courseContents = _courseLib.GetCourseContent(fileName);
@@ -56,14 +56,14 @@ namespace Appcademy.Controllers
     }
 
     //TODO crear servicio para obtener el contenido de un tema
-    //[HttpGet("subjectContent/{fileName}", Name = "LeerContenidoTema")]
-    //public ActionResult<List<CourseContent>> ReadFile(string fileName)
-    //{
-    //  List<CourseContent> courseContents = new List<CourseContent>();
-    //  //courseContents = new FileLib().ReadFile(fileName);
-    //  courseContents = _fileLib.ReadFileContent(fileName, "");
-    //  return courseContents;
-    //}
+    [HttpGet("subjectContent/{fileName}", Name = "LeerContenidoTema")]
+    public ActionResult<SubjectContent> GetSubjectContent(string fileName)
+    {
+      SubjectContent subjectContent = new SubjectContent();
+      //courseContents = new FileLib().ReadFile(fileName);
+      subjectContent = _courseLib.GetSubjectContent(fileName);
+      return subjectContent;
+    }
 
     [HttpPost("register")]
     public async Task<ActionResult> Register([FromBody] Course course)
